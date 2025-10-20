@@ -1,0 +1,21 @@
+export const colors = {
+  background: '#0F1020',
+  surface: '#121123',
+  surfaceAlt: '#1C1D36',
+  cardGradientStart: '#1D1E3A',
+  cardGradientEnd: '#141427',
+  accent: '#7F5AF0',
+  accentAlt: '#9867FF',
+  highlight: '#2CB67D',
+  highlightSoft: '#88F2C8',
+  warn: '#F25F4C',
+  info: '#46A6FF',
+  textPrimary: '#FFFFFF',
+  textSecondary: '#A0A3C4',
+  textMuted: '#6B6E8F',
+  border: 'rgba(255, 255, 255, 0.08)',
+  overlay: 'rgba(9, 10, 24, 0.75)',
+  teacher: '#7F5AF0',
+  client: '#2CB67D',
+  admin: '#F25F4C'
+};

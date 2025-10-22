@@ -1,0 +1,16 @@
+# Python artifacts
+__pycache__/
+*.pyc
+
+# Node/Expo artifacts
+node_modules/
+.expo/
+.expo-shared/
+dist/
+build/
+yarn.lock
+package-lock.json
+*.expo
+
+# OS
+.DS_Store

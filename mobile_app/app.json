@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "Pilates Studio",
+    "slug": "pilates-studio",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#121123"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#121123"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./web/icons/icon-192.png"
+    },
+    "extra": {
+      "SUPABASE_URL": "https://<O_TEU_PROJECTO>.supabase.co",
+      "SUPABASE_ANON_KEY": "<A_TUA_ANON_KEY>"
+    }
+  }
+}

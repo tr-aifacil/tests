@@ -3,16 +3,16 @@ import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../theme/colors';
 
-const roles = [
+const defaultTabs = [
   { id: 'teacher', label: 'Professor', icon: 'people-outline', color: colors.teacher },
   { id: 'client', label: 'Cliente', icon: 'person-outline', color: colors.client },
   { id: 'admin', label: 'Admin', icon: 'settings-outline', color: colors.admin }
 ];
 
-export default function RoleTabs({ role, onChangeRole }) {
+export default function RoleTabs({ role, onChangeRole, tabs = defaultTabs }) {
   return (
     <View style={styles.container}>
-      {roles.map(item => {
+      {tabs.map(item => {
         const isActive = item.id === role;
         return (
           <TouchableOpacity

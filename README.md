@@ -48,3 +48,29 @@ mobile_app/
 - Dados mock permitem demonstrar fluxos completos sem backend.
 
 Sinta-se à vontade para substituir os dados mock por integrações reais e acrescentar navegação adicional conforme necessário.
+
+## Como partilhar o código com uma LLM
+
+Para obter respostas úteis de um modelo de linguagem de grande porte (LLM) ao discutir esta aplicação, forneça o máximo de contexto organizado possível:
+
+1. **Partilhe o repositório ou um excerto relevante**
+   - Se o código estiver hospedado no GitHub/GitLab, envie o URL do repositório e indique as pastas/ficheiros que precisam de análise (`mobile_app/src/components`, `mobile_app/src/screens`, etc.).
+   - Caso contrário, compacte o projecto (por exemplo, `zip -r pilates-app.zip mobile_app`) e disponibilize o ficheiro para download ou copie apenas os trechos relevantes.
+
+2. **Explique o objectivo da análise**
+   - Descreva o que a LLM deve fazer: revisar funcionalidades, propor melhorias, detectar bugs, optimizar UI, gerar testes, etc.
+   - Acrescente requisitos específicos (ex.: “comparar com a App Studio”, “sugerir integração com pagamentos”).
+
+3. **Forneça contexto adicional**
+   - Inclua requisitos funcionais, fluxos de utilizador esperados e qualquer documentação de apoio (por exemplo, notas sobre paridade com a App Studio ou capturas de ecrã).
+   - Informe o estado actual do projecto (ex.: “dados mock”, “sem backend”) para que a LLM adapte as sugestões.
+
+4. **Divida o conteúdo em blocos menores quando necessário**
+   - Para ficheiros longos, envie secções relevantes em mensagens separadas ou peça à LLM para solicitar mais contexto conforme necessário.
+   - Utilize resumos (`README`, `Estrutura do projecto`) para guiar a LLM antes de partilhar o código completo.
+
+5. **Verifique limites de tamanho**
+   - LLMs têm limites de tokens; se o projecto for grande, priorize ficheiros críticos e forneça descrições das partes restantes.
+   - Considere usar ferramentas automáticas de resumo (`npx expo-optimize`, `npx expo export --dump-sourcemap`) para gerar insights sintéticos antes de envolver a LLM.
+
+Seguindo estes passos, a LLM terá contexto suficiente para compreender a estrutura, objectivos e estado actual da aplicação mobile, produzindo respostas mais precisas e accionáveis.

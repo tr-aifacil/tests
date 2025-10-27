@@ -21,6 +21,10 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#121123"
       }
+    },
+    "extra": {
+      "SUPABASE_URL": "https://<O_TEU_PROJECTO>.supabase.co",
+      "SUPABASE_ANON_KEY": "<A_TUA_ANON_KEY>"
     }
   }
 }

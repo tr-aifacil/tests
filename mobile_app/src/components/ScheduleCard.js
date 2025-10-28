@@ -6,8 +6,11 @@ import { colors } from '../theme/colors';
 
 const statusCopy = {
   confirmed: { label: 'Confirmada', icon: 'checkmark-circle', color: colors.highlight },
-  credit: { label: 'Usa crédito', icon: 'refresh-circle', color: colors.accent },
-  waitlist: { label: 'Lista de espera', icon: 'hourglass', color: colors.warn }
+  booked: { label: 'Reservada', icon: 'checkmark-circle', color: colors.highlight },
+  credit: { label: 'Crédito devolvido', icon: 'refresh-circle', color: colors.accent },
+  waitlist: { label: 'Lista de espera', icon: 'hourglass', color: colors.warn },
+  canceled: { label: 'Cancelada', icon: 'close-circle', color: colors.warn },
+  no_show: { label: 'Falta', icon: 'remove-circle', color: colors.warn }
 };
 
 export default function ScheduleCard({

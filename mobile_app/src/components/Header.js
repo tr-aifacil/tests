@@ -4,23 +4,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../theme/colors';
 
-const roleCopy = {
-  teacher: {
-    title: 'Bem-vinda, Ana',
-    subtitle: 'Agenda de hoje pronta!'
-  },
-  client: {
-    title: 'Olá, Marta',
-    subtitle: 'As tuas aulas na Studio estão alinhadas.'
-  },
-  admin: {
-    title: 'Gestão Studio',
-    subtitle: 'Painel de operações em tempo real.'
-  }
-};
-
-export default function Header({ role }) {
-  const copy = roleCopy[role];
+export default function Header({ title, subtitle }) {
+  const headerTitle = title || 'Pilates Studio';
+  const headerSubtitle = subtitle || 'Agenda sincronizada com o estúdio.';
 
   return (
     <LinearGradient
@@ -31,8 +17,8 @@ export default function Header({ role }) {
         <Ionicons name="leaf" size={22} color={colors.highlightSoft} />
       </View>
       <View style={styles.textWrapper}>
-        <Text style={styles.title}>{copy.title}</Text>
-        <Text style={styles.subtitle}>{copy.subtitle}</Text>
+        <Text style={styles.title}>{headerTitle}</Text>
+        <Text style={styles.subtitle}>{headerSubtitle}</Text>
       </View>
       <View style={styles.badge}>
         <Ionicons name="notifications-outline" size={18} color={colors.textPrimary} />

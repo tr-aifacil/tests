@@ -1,0 +1,16 @@
+{
+  "name": "Pilates Studio",
+  "short_name": "Pilates",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#121123",
+  "theme_color": "#44e1b5",
+  "description": "Agenda de Pilates com reservas, presenças e créditos ligada ao Supabase.",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

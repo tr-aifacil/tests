@@ -7,7 +7,12 @@ export default function ActionStrip({ actions }) {
   return (
     <View style={styles.container}>
       {actions.map(action => (
-        <TouchableOpacity key={action.id} style={styles.action} activeOpacity={0.9}>
+        <TouchableOpacity
+          key={action.id}
+          style={styles.action}
+          activeOpacity={0.9}
+          onPress={action.onPress}
+        >
           <View style={[styles.iconWrapper, { backgroundColor: action.tint + '26' }] }>
             <Ionicons name={action.icon} size={18} color={action.tint} />
           </View>

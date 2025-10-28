@@ -1,23 +1,27 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../theme/colors';
 
-const roles = [
+const defaultTabs = [
   { id: 'teacher', label: 'Professor', icon: 'people-outline', color: colors.teacher },
   { id: 'client', label: 'Cliente', icon: 'person-outline', color: colors.client },
   { id: 'admin', label: 'Admin', icon: 'settings-outline', color: colors.admin }
 ];
 
-export default function RoleTabs({ role, onChangeRole }) {
+export default function RoleTabs({ role, onChangeRole, tabs = defaultTabs }) {
   return (
     <View style={styles.container}>
-      {roles.map(item => {
+      {tabs.map(item => {
         const isActive = item.id === role;
         return (
           <TouchableOpacity
             key={item.id}
-            style={[styles.tab, isActive && { backgroundColor: item.color }]}
+            style={[
+              styles.tab,
+              isActive && { backgroundColor: item.color },
+              Platform.OS === 'web' && styles.tabWeb
+            ]}
             activeOpacity={0.85}
             onPress={() => onChangeRole(item.id)}
           >
@@ -44,7 +48,9 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     padding: 6,
     borderWidth: 1,
-    borderColor: colors.border
+    borderColor: colors.border,
+    maxWidth: 560,
+    alignSelf: 'center'
   },
   tab: {
     flex: 1,
@@ -54,6 +60,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     gap: 6
+  },
+  tabWeb: {
+    cursor: 'pointer'
   },
   label: {
     color: colors.textSecondary,

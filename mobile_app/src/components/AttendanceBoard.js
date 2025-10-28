@@ -11,12 +11,22 @@ const statusTokens = {
 };
 
 export default function AttendanceBoard({ attendees }) {
+  const list = Array.isArray(attendees) ? attendees : [];
+
+  if (!list.length) {
+    return (
+      <View style={[styles.container, styles.emptyState]}>
+        <Text style={styles.emptyLabel}>Sem presenças registadas nesta sessão.</Text>
+      </View>
+    );
+  }
+
   return (
     <View style={styles.container}>
-      {attendees.map((student, index) => {
+      {list.map((student, index) => {
         const meta = statusTokens[student.status] || statusTokens.present;
         return (
-          <View key={student.id} style={[styles.row, index < attendees.length - 1 && styles.rowDivider]}>
+          <View key={student.id} style={[styles.row, index < list.length - 1 && styles.rowDivider]}>
             <View style={styles.avatar}>
               <Text style={styles.initials}>{student.name.slice(0, 2).toUpperCase()}</Text>
             </View>
@@ -43,6 +53,10 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     borderWidth: 1,
     borderColor: colors.border
+  },
+  emptyState: {
+    paddingVertical: 24,
+    alignItems: 'center'
   },
   row: {
     flexDirection: 'row',
@@ -89,5 +103,11 @@ const styles = StyleSheet.create({
   tagLabel: {
     fontSize: 12,
     fontWeight: '600'
+  },
+  emptyLabel: {
+    color: colors.textSecondary,
+    fontSize: 14,
+    paddingHorizontal: 16,
+    textAlign: 'center'
   }
 });
